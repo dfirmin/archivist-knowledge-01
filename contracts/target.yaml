@@ -9,7 +9,7 @@ version: 1
 slug: archivist-knowledge-01
 name: Archivist Knowledge 01
 # The engine release this target runs on. Upgrade by changing it in a pull request.
-engine: v0.2.0
+engine: v0.3.0
 
 # Optional: choose or define pipelines from engine agents
 # (author, enricher, verifier, gap-agent, scorer). Without these, the engine's `full` runs.
