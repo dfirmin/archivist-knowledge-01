@@ -1,11 +1,27 @@
-# Intake: how inbox documents become articles. Prose fields are rules the agents apply.
 version: 1
-concept_type: knowledge-article
-scope: Every document in the inbox is in scope.
-grouping: Each document is its own article, unless documents say they are parts of one topic.
-naming: The topic name from the document title, as a short title-case phrase.
+# No default concept_type: every class says which concept type its documents become.
+scope: >-
+  A document is in scope when its owning team is listed in teams (match by key, name or alias; a
+  chat or email with no stated owner belongs to the team its participants clearly speak for).
+  Otherwise it stays in the inbox.
+grouping: Each document is its own concept, except a policy amendment, which joins the policy it amends.
+naming: >-
+  A short, plain title for what the document governs or explains, in title case, without dates,
+  version numbers or words like "Re:", "Fwd:" or "notes". Messy sources often have no usable
+  title: name the concept for its subject.
 classes:
-  - id: document
-    description: Any source document.
+  - id: policy-document
+    description: States rules people must follow (a policy, standard or guideline).
+    concept_type: policy
+    mode: create
+    sections: all
+  - id: policy-amendment
+    description: Changes an existing policy.
+    concept_type: policy
+    mode: enrich-only          # never creates a policy on its own; waits for the policy itself
+    sections: best-fit
+  - id: procedure-document
+    description: Tells someone how to carry out a task (a runbook, playbook or how-to).
+    concept_type: runbook      # the runbook type then picks routine-procedure or incident-response
     mode: create
     sections: all
