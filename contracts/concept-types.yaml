@@ -1,15 +1,36 @@
-# Concept types: every kind of document this bundle holds. Starter: one generic article.
-# `type` is the exact OKF type string. Fields beyond OKF's own must start with okfx_.
 version: 1
 concept_types:
-  knowledge-article:
-    type: Knowledge Article
-    description: One topic explained from the documents that describe it.
-    authored: true                       # the author may create these from inbox documents
-    structures: [article]
-    path: "knowledge/articles/{title}.md"
-    tags: [article]
+  policy:
+    type: Policy
+    description: A rule people must follow, who it applies to, and its exceptions.
+    authored: true
+    structures: [policy]                       # one structure: no rule needed
+    path: "knowledge/policies/{title}.md"
+    tags: [policy, "{okfx_team}"]
     fields:
-      okfx_owner:
-        description: The team or person the source names as owner, if any.
-        from: the source document body; leave unset when it names none
+      okfx_team:
+        description: The owning team's key.
+        required: true
+        from: teams — the team the document names as owner
+
+  runbook:
+    type: Runbook
+    description: How to carry out an operational task.
+    authored: true
+    structures: [routine-procedure, incident-response]
+    # Several structures, so a rule says which one fits THIS document. Decided by content, per
+    # document: two runbooks from the same team can get different structures.
+    structure_rule: >-
+      Use incident-response when the document is about responding to an outage, alert or other
+      unplanned failure. Use routine-procedure for planned, repeatable work such as deployments,
+      rotations or maintenance.
+    path: "knowledge/runbooks/{title}.md"
+    tags: [runbook, "{okfx_team}"]
+    fields:
+      okfx_team:
+        description: The owning team's key.
+        required: true
+        from: teams — the team the document names as owner
+      okfx_on_call:
+        description: Where to escalate.
+        from: teams — the owning team's on_call value
