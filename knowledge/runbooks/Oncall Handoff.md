@@ -16,10 +16,14 @@ okfx_structure: routine-procedure
 okfx_team: platform
 okfx_on_call: "#platform-oncall"
 okfx_gaps: []
-okfx_confidence: 1.0
+okfx_confidence: 1.00
 verified:
   - by: process:archivist-verifier/1
     at: 2026-10-04T04:58:54Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:10:37Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:27:54Z
 ---
 
 ## When To Use

@@ -17,6 +17,12 @@ sources:
 verified:
   - by: process:archivist-verifier/1
     at: 2026-10-04T04:38:07Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:18:50Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:24:28Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:32:12Z
 okfx_structure: policy
 okfx_team: finance-ops
 okfx_gaps: []
@@ -37,11 +43,9 @@ All employees. Contractors are reimbursed under the terms of their contracts.
 
 ## Rules
 
-Submit claims in the expense tool within 30 days of the expense. Attach an itemized receipt for every expense over $25. Meals while travelling are reimbursed up to $75 per day, effective November 1. Alcohol is not reimbursed. Claims over $1,000 need approval from the employee's director before submission.
+Submit claims in the expense tool within 30 days of the expense. Attach an itemized receipt for every expense over $25. Meals while travelling are reimbursed up to $75 per day (increased from $60, effective November 1). Alcohol is not reimbursed. Claims over $1,000 need approval from the employee's director before submission.
 
 *Source: [Expense Reimbursement Policy](sources/processed/expense-reimbursement-policy.md), retrieved 2026-10-04*
-
-The travel meal cap was increased from $60 per day to $75 per day, effective November 1.
 
 *Source: [FW: RE: meal limit - FINAL](sources/processed/fwd-meal-limit-change.md), retrieved 2026-10-04*
 

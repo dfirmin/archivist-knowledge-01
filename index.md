@@ -22,7 +22,7 @@ okf_version: "0.2"
 
 ## Security
 
-* [Phishing Credential Harvest Response](knowledge/runbooks/Phishing%20Credential%20Harvest%20Response.md) - How to respond when users report phishing emails that harvest credentials. Confidence 1.0.
+* [Phishing Credential Harvest Response](knowledge/runbooks/Phishing%20Credential%20Harvest%20Response.md) - How to respond when users report phishing emails that harvest credentials. Confidence 0.60.
 
 ## Sources
 

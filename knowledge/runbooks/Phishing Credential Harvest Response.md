@@ -15,11 +15,19 @@ sources:
 verified:
   - by: process:archivist-verifier/1
     at: 2026-10-04T04:45:17Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:07:35Z
+  - by: process:archivist-verifier/1
+    at: 2026-10-04T05:37:37Z
 okfx_structure: incident-response
 okfx_team: security
 okfx_on_call: "#security-incidents"
-okfx_gaps: []
-okfx_confidence: 1.0
+okfx_gaps:
+  - kind: missing_escalation
+    origin: documentation
+    description: The Escalation section provides no specific person, team, or channel to contact;
+      it only states 'wake up the incident commander' without specifying how to reach them.
+okfx_confidence: 0.60
 ---
 
 ## Symptoms
@@ -36,7 +44,7 @@ Possible payroll fraud if compromised credentials are used on the HR system. So 
 
 ## Immediate Actions
 
-Block the sender domain and malicious URL at both the email gateway and web proxy (assign to platform/security team lead). Force password reset and revoke active sessions for users who entered credentials, then check MFA logs for any new devices (assign to IT). Pull all copies of the phishing email from mailboxes (purge) (assign to security team lead).
+Block the sender domain and malicious URL at both the email gateway and web proxy. Force password reset and revoke active sessions for users who entered credentials, then check MFA logs for any new devices. Pull all copies of the phishing email from mailboxes (purge).
 
 *Source: [IR sync — phishing wave — notes (rough!!)](sources/processed/phishing-incident-notes.md), retrieved 2026-10-04*
 
@@ -48,12 +56,12 @@ Use EDR to look for logins from new countries or devices for affected accounts i
 
 ## Escalation
 
-If any affected users had admin rights, escalate to the incident commander. For all phishing incidents, use #security-incidents.
+If any affected users had admin rights, treat as a major incident and wake up the incident commander.
 
 *Source: [IR sync — phishing wave — notes (rough!!)](sources/processed/phishing-incident-notes.md), retrieved 2026-10-04*
 
 ## Follow-up
 
-Have communications draft an all-staff "don't click" message for security review. Security lead writes up the timeline and lessons learned within 3 days of the incident. Determine with legal whether the insurer needs to be notified (ownership unclear—confirm with legal).
+Have communications draft an all-staff "don't click" message for security review. Write up the timeline and lessons learned within 3 days of the incident. Determine with legal whether the insurer needs to be notified (ownership unclear—confirm with legal).
 
 *Source: [IR sync — phishing wave — notes (rough!!)](sources/processed/phishing-incident-notes.md), retrieved 2026-10-04*
