@@ -8,6 +8,10 @@ okf_version: "0.2"
 
 * [Backfilling a Pipeline Partition](knowledge/runbooks/Backfilling%20a%20Pipeline%20Partition.md) - How to rebuild a daily partition of a warehouse table when it is missing or loaded with bad data. Confidence 1.0.
 
+## Finance Operations
+
+* [Expense Reimbursement Policy](knowledge/policies/Expense%20Reimbursement%20Policy.md) - Explains which business expenses the company reimburses and how to claim them. Confidence 1.0.
+
 ## Sources
 
 - Waiting to be authored: `sources/inbox/`
