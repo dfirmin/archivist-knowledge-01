@@ -3,6 +3,7 @@
 ## 2026-10-04
 
 * **Update**: [Phishing Credential Harvest Response](/knowledge/runbooks/Phishing%20Credential%20Harvest%20Response.md) — How to respond when users report phishing emails that harvest credentials.
+* **Update**: [Phishing Credential Harvest Response](/knowledge/runbooks/Phishing%20Credential%20Harvest%20Response.md) — How to respond when users report phishing emails that harvest credentials.
 * **Update**: [Expense Reimbursement Policy](/knowledge/policies/Expense%20Reimbursement%20Policy.md) — Explains which business expenses the company reimburses and how to claim them.
 * **Update**: [Expense Reimbursement Policy](/knowledge/policies/Expense%20Reimbursement%20Policy.md) — Explains which business expenses the company reimburses and how to claim them.
 * **Update**: [Oncall Handoff](/knowledge/runbooks/Oncall%20Handoff.md) — Weekly oncall handoff procedure run by the outgoing oncall person every Monday at 10am ET.
