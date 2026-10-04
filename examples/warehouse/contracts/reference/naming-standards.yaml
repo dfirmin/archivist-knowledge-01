@@ -1,0 +1,7 @@
+# Fictional example. Abbreviations used in physical object names.
+abbreviations:
+  CUST: customer
+  CNTCT: contact
+  INCRMTL: incremental
+  SV: secure view (object-type suffix)
+  CD: code
