@@ -5,7 +5,7 @@ slug: archivist-knowledge-01
 name: Archivist Knowledge 01
 description: Company handbook — policies and runbooks from several teams, authored from messy and clean sources.
 # The engine release this target runs on. Upgrade by changing it in a pull request.
-engine: 44a830b52075ef019dfde52b6547ce8ed9780076
+engine: f46ab827a07c73e8c9bc1188f54a8d9573ade007
 
 default_pipeline: handbook
 pipelines:
