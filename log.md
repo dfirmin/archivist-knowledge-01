@@ -2,6 +2,7 @@
 
 ## 2026-10-05
 
+* **Update**: [Post-Incident Review Policy](/knowledge/policies/Post-Incident%20Review%20Policy.md) — gap judgment re-run; the empty Purpose section stays recorded as a missing_section gap.
 * **Creation**: [Weekly Oncall Handoff](/knowledge/runbooks/Weekly%20Oncall%20Handoff.md) — how the outgoing oncall person hands over to the incoming person every Monday at 10am ET.
 * **Creation**: [Phishing Wave Response](/knowledge/runbooks/Phishing%20Wave%20Response.md) — agreed actions, checks and escalation for a credential-harvesting phishing wave.
 * **Creation**: [Primary Database Outage Response](/knowledge/runbooks/Primary%20Database%20Outage%20Response.md) — the incident commander decides on replica promotion, and the DBA on-call is paged after 15 minutes.

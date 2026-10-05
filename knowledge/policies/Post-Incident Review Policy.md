@@ -15,10 +15,9 @@ okfx_confidence: 0.80
 okfx_gaps:
   - kind: missing_section
     origin: documentation
-    description: The Purpose section contains only 'Awaiting source material' stub. The cited
-      source (2026-10-02-db-outage-retro-call--post-incident-review-policy.md) discusses the
-      five-business-day timeline and scope but does not explain the business purpose or goals
-      of post-incident reviews.
+    description: The Purpose section contains only an 'Awaiting source material' stub. The
+      cited source discusses the five-business-day timeline and scope but does not explain
+      the business purpose or goals of post-incident reviews.
 ---
 
 # Post-Incident Review Policy
