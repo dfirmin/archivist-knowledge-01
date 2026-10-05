@@ -16,7 +16,7 @@ okfx_confidence: 0.75
 okfx_gaps:
   - kind: missing_section
     origin: documentation
-    description: The Symptoms, Impact, and Diagnosis sections hold only "Awaiting source material"
+    description: The Symptoms, Impact, and Diagnosis sections hold only 'Awaiting source material'
       stubs. The cited source does not provide this information.
 ---
 
