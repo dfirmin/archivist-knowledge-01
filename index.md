@@ -4,6 +4,10 @@ okf_version: "0.2"
 
 # Handbook
 
+## Data Engineering
+
+* [Backfilling a Pipeline Partition](knowledge/runbooks/Backfilling%20a%20Pipeline%20Partition.md) - How to rebuild a missing or bad daily partition of a warehouse table. Confidence 1.0.
+
 ## Finance Operations
 
 * [Expense Reimbursement Policy](knowledge/policies/Expense%20Reimbursement%20Policy.md) - Explains which business expenses the company reimburses and how to claim them. Confidence 1.0.
