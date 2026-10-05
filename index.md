@@ -16,6 +16,8 @@ okf_version: "0.2"
 
 * [Post-Incident Review Policy](knowledge/policies/Post-Incident%20Review%20Policy.md) - Every customer-facing incident gets a post-incident review within five business days, across all teams. Confidence 0.80.
 
+* [Primary Database Outage Response](knowledge/runbooks/Primary%20Database%20Outage%20Response.md) - Runbook changes agreed in the retro: the incident commander decides on replica promotion, and the DBA on-call is paged after 15 minutes. Confidence 0.75.
+
 ## Sources
 
 - Waiting to be authored: `sources/inbox/`
