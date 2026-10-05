@@ -4,7 +4,9 @@ okf_version: "0.2"
 
 # Handbook
 
-No concepts yet.
+## Finance Operations
+
+* [Expense Reimbursement Policy](knowledge/policies/Expense%20Reimbursement%20Policy.md) - Explains which business expenses the company reimburses and how to claim them. Confidence 1.0.
 
 ## Sources
 
