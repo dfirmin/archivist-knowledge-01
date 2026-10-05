@@ -18,6 +18,10 @@ okf_version: "0.2"
 
 * [Primary Database Outage Response](knowledge/runbooks/Primary%20Database%20Outage%20Response.md) - Runbook changes agreed in the retro: the incident commander decides on replica promotion, and the DBA on-call is paged after 15 minutes. Confidence 0.75.
 
+## Security
+
+* [Phishing Wave Response](knowledge/runbooks/Phishing%20Wave%20Response.md) - Agreed actions, checks and escalation for a phishing wave that harvests credentials with a fake DocuSign payroll email. Confidence 1.0.
+
 ## Sources
 
 - Waiting to be authored: `sources/inbox/`

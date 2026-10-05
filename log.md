@@ -2,6 +2,7 @@
 
 ## 2026-10-05
 
+* **Creation**: [Phishing Wave Response](/knowledge/runbooks/Phishing%20Wave%20Response.md) — agreed actions, checks and escalation for a credential-harvesting phishing wave.
 * **Creation**: [Primary Database Outage Response](/knowledge/runbooks/Primary%20Database%20Outage%20Response.md) — the incident commander decides on replica promotion, and the DBA on-call is paged after 15 minutes.
 * **Creation**: [Post-Incident Review Policy](/knowledge/policies/Post-Incident%20Review%20Policy.md) — every customer-facing incident gets a post-incident review within five business days, across all teams.
 * **Creation**: [Backfilling a Pipeline Partition](/knowledge/runbooks/Backfilling%20a%20Pipeline%20Partition.md) — how to rebuild a missing or bad daily warehouse partition.
