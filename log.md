@@ -2,7 +2,7 @@
 
 ## 2026-10-05
 
-* **Quarantined**: [Social Media Posting Guidelines](/quarantine/social-media-guidelines.md) — The document's owner, Marketing, matches no team in the teams reference data, so it is out of scope.
+* **Creation**: [Social Media Posting Guidelines](/knowledge/policies/Social%20Media%20Posting%20Guidelines.md) — only the brand team posts on company accounts; employees may share but not speak for the company.
 
 ## Initial scaffold
 
