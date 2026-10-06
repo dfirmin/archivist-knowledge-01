@@ -43,3 +43,5 @@ classes:
       Keep passages that state or change how an incident is handled (a runbook step, an escalation
       contact or timing) or a rule people must follow (a policy), one extract per runbook or policy
       they concern. Drop status chatter, introductions, jokes and scheduling.
+
+# test: mixed change
