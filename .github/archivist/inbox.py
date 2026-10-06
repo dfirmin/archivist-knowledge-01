@@ -12,8 +12,8 @@ removed) directly under ``sources/inbox/``. A drop is merged when:
 - every file has an allowed extension (``ARCHIVIST_INBOX_EXTENSIONS``, default ``.md,.txt``);
 - no file is larger than ``ARCHIVIST_INBOX_MAX_KB`` (default 1024).
 
-A drop that breaks a rule fails the check with the reason, so the person who opened it sees what
-to fix. Anything that is not a drop (a contract change, a mix of inbox and other files, an engine
+A drop that breaks a rule fails the check and says why in a comment on the pull request (one
+comment, updated on each push), so the person who opened it sees what to fix. Anything that is not a drop (a contract change, a mix of inbox and other files, an engine
 run's pull request) passes the check untouched and waits for a code owner's review as usual.
 
     python3 .github/archivist/inbox.py              # in the workflow
@@ -126,6 +126,23 @@ class GitHub:
         return int(meta["size"])  # type: ignore[index]
 
 
+MARKER = "<!-- archivist-inbox -->"
+
+
+def comment(github: GitHub, number: int, text: str) -> None:
+    """One comment per pull request, replaced on each run; best effort."""
+    body = f"{MARKER}\n{text}"
+    try:
+        existing = github.call("GET", f"issues/{number}/comments?per_page=100")
+        mine = [c for c in existing if MARKER in (c.get("body") or "")]  # type: ignore[union-attr]
+        if mine:
+            github.call("PATCH", f"issues/comments/{mine[0]['id']}", {"body": body})
+        else:
+            github.call("POST", f"issues/{number}/comments", {"body": body})
+    except urllib.error.HTTPError:
+        pass  # the check result still says it failed
+
+
 def summary(text: str, environ: dict[str, str]) -> None:
     print(text)
     target = environ.get("GITHUB_STEP_SUMMARY")
@@ -155,7 +172,11 @@ def main(argv: list[str], environ: dict[str, str]) -> int:
         summary(f"Not an inbox drop ({decision.reasons[0]}). Left for review.", environ)
         return 0
     if decision.action == "fail":
-        summary("Inbox drop not merged:\n" + "\n".join(f"- {reason}" for reason in decision.reasons), environ)
+        text = ("**Inbox drop not merged.** Fix these and push again, or ask a code owner to review it:\n\n"
+                + "\n".join(f"- {reason}" for reason in decision.reasons))
+        summary(text, environ)
+        if not dry_run:
+            comment(github, number, text)
         return 1
     names = ", ".join(item["filename"][len(INBOX):] for item in files)
     if dry_run:
