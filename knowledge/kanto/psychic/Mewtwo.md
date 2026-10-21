@@ -13,6 +13,8 @@ okfx_dex_number: 150
 okfx_types: [psychic]
 okfx_primary_type: psychic
 okfx_generation: 1
+verified:
+  - {by: "human:Dee", at: 2026-10-21T21:25:31Z}
 ---
 
 # Mewtwo
@@ -34,6 +36,8 @@ Its base stats total 680, and its strongest stat is Sp. Atk (154).
 | Sp. Def | 90 |
 | Speed | 130 |
 | **Total** | **680** |
+
+Generation: Generation I, Mewtwo's debut generation. The base stat total of 680 was confirmed by Dee on October 21, 2026.
 
 ## Type Matchups
 
