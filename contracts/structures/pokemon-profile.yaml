@@ -13,6 +13,9 @@ sections:
     description: Height in metres and weight in kilograms.
   - heading: Evolution
     description: What it evolves from and into, or that it does not evolve.
+  - heading: Where to Find
+    required: false
+    description: Where it lives in its region, or how it's obtained, when a source says.
   - heading: Strategy Notes
     required: false
     description: How trainers use it, when a source says.
