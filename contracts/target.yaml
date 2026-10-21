@@ -3,7 +3,7 @@
 version: 1
 slug: archivist-knowledge-01
 name: Archivist Knowledge 01
-description: Company handbook — policies and runbooks from several teams, authored from messy and clean sources.
+description: Company handbook — policies and runbooks from several teams, authored from messy and clean sources — plus a Pokédex (regions, types, one concept per Pokémon) for testing at scale.
 # The engine release this target runs on. Upgrade by changing it in a pull request.
 engine: 9166d2a3827abde94a9e13c8ee066ae67847165f
 

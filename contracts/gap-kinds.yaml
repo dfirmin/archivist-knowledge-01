@@ -1,7 +1,7 @@
 version: 1
 kinds:
   - id: missing_section
-    applies_to: [policy, runbook]
+    applies_to: [policy, runbook, pokemon, region-overview]
     definition: A required section has no substantive content.
     origins: [author, documentation]
     context: [the concept body, the structure named in okfx_structure, the cited sources]
@@ -30,3 +30,34 @@ kinds:
       - The steps change a production system and there is no Rollback section
       - A production system is one that serves customers or holds business data (applications, databases, pipelines, infrastructure); changing a team's own tooling settings (pager schedules, chat channels, dashboards, tickets) is not a production change
     priority: medium
+
+  # Pokédex gaps: what a trainer would want that the data extract doesn't say.
+  - id: missing_strategy_notes
+    applies_to: [pokemon]
+    definition: The concept doesn't say how trainers use this Pokémon in battle.
+    origins: [documentation]
+    fixed_origin: documentation
+    context: [the concept body, Strategy Notes]
+    detection:
+      - There is no Strategy Notes section, or it holds no advice (a role, a typical move set, what it counters or what counters it)
+      - Base stats and matchups alone are not strategy notes
+    priority: medium
+  - id: missing_habitat
+    applies_to: [pokemon]
+    definition: The concept doesn't say where to find this Pokémon in its region.
+    origins: [documentation]
+    fixed_origin: documentation
+    context: [the concept body, Where to Find]
+    detection:
+      - There is no Where to Find section, or it names no route, area, method (evolution, trade, event) or game
+    priority: low
+  - id: unverified_stats
+    applies_to: [pokemon]
+    definition: The base stats haven't been confirmed against the current games.
+    origins: [documentation]
+    fixed_origin: documentation
+    context: [Base Stats, okfx_generation, the cited sources]
+    detection:
+      - The Pokémon's stats changed in a later generation and the concept doesn't say which generation its numbers are from
+      - A trainer reported numbers that differ from the Base Stats table and nobody has checked them
+    priority: high
