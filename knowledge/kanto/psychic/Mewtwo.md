@@ -3,7 +3,7 @@ type: Pokemon
 title: "Mewtwo"
 description: "Psychic-type Pokémon from Kanto, National Pokédex #0150."
 tags: [pokemon, kanto, psychic]
-status: draft
+status: verified
 generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
 sources:
   - {resource: sources/processed/pokeapi-kanto.md, title: "PokéAPI data extract: Kanto"}
@@ -15,6 +15,7 @@ okfx_primary_type: psychic
 okfx_generation: 1
 verified:
   - {by: "human:Dee", at: 2026-10-21T21:25:31Z}
+  - {by: "human:Dee", at: 2026-10-21T21:35:00Z}
 ---
 
 # Mewtwo

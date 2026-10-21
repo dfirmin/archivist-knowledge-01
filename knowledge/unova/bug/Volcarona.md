@@ -3,7 +3,7 @@ type: Pokemon
 title: "Volcarona"
 description: "Bug/Fire-type Pokémon from Unova, National Pokédex #0637."
 tags: [pokemon, unova, bug, fire]
-status: draft
+status: verified
 generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
 sources:
   - {resource: sources/processed/pokeapi-unova.md, title: "PokéAPI data extract: Unova"}
@@ -13,6 +13,8 @@ okfx_dex_number: 637
 okfx_types: [bug, fire]
 okfx_primary_type: bug
 okfx_generation: 5
+verified:
+  - {by: "human:Dee", at: 2026-10-21T21:35:00Z}
 ---
 
 # Volcarona
@@ -34,6 +36,8 @@ Its base stats total 550, and its strongest stat is Sp. Atk (135).
 | Sp. Def | 105 |
 | Speed | 100 |
 | **Total** | **550** |
+
+These base stats (Generation V) were confirmed by Dee on October 21, 2026.
 
 ## Type Matchups
 

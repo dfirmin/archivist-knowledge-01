@@ -3,7 +3,7 @@ type: Pokemon
 title: "Mr. Mime"
 description: "Psychic/Fairy-type Pokémon from Kanto, National Pokédex #0122."
 tags: [pokemon, kanto, psychic, fairy]
-status: draft
+status: verified
 generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
 sources:
   - {resource: sources/processed/pokeapi-kanto.md, title: "PokéAPI data extract: Kanto"}
@@ -13,6 +13,8 @@ okfx_dex_number: 122
 okfx_types: [psychic, fairy]
 okfx_primary_type: psychic
 okfx_generation: 1
+verified:
+  - {by: "human:Dee", at: 2026-10-21T21:35:00Z}
 ---
 
 # Mr. Mime
