@@ -1,0 +1,11 @@
+id: region-overview
+description: A region as a subject area — the Pokémon first found there, by primary type.
+sections:
+  - Overview
+  - heading: Highlights
+    description: The highest base stat totals, and the Legendary and Mythical Pokémon.
+  - heading: Pokémon by Type
+    description: One list per primary type, linking each Pokémon's concept.
+  - heading: Open Questions
+    owner: placeholder
+    placeholder: "*[Questions for the owning team are collected here during review.]*"

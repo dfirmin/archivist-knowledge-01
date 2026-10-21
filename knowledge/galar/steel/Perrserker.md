@@ -1,0 +1,63 @@
+---
+type: Pokemon
+title: "Perrserker"
+description: "Steel-type Pokémon from Galar, National Pokédex #0863."
+tags: [pokemon, galar, steel]
+status: draft
+generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
+sources:
+  - {resource: sources/processed/pokeapi-galar.md, title: "PokéAPI data extract: Galar"}
+okfx_structure: pokemon-profile
+okfx_region: galar
+okfx_dex_number: 863
+okfx_types: [steel]
+okfx_primary_type: steel
+okfx_generation: 8
+---
+
+# Perrserker
+
+## Overview
+
+Perrserker is a Steel-type Pokémon first found in the Galar region (Generation VIII), number 863 in the National Pokédex. It is known as the Viking Pokémon.
+
+Its base stats total 440, and its strongest stat is Attack (110).
+
+## Base Stats
+
+| Stat | Base |
+|---|---|
+| HP | 70 |
+| Attack | 110 |
+| Defense | 100 |
+| Sp. Atk | 50 |
+| Sp. Def | 60 |
+| Speed | 50 |
+| **Total** | **440** |
+
+## Type Matchups
+
+Damage it takes from each attacking type, where that isn't normal.
+
+- **Weak to** (2×): Fighting, Fire, Ground
+- **Resists** (½×): Bug, Dragon, Fairy, Flying, Grass, Ice, Normal, Psychic, Rock, Steel
+- **Immune to** (0×): Poison
+
+## Abilities
+
+- Battle Armor
+- Tough Claws
+- Steely Spirit (hidden ability)
+
+## Size
+
+- Height: 0.8 m
+- Weight: 28 kg
+
+## Evolution
+
+- Evolves from: Meowth
+
+## Open Questions
+
+*[Questions for the owning team are collected here during review.]*

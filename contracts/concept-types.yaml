@@ -48,3 +48,54 @@ concept_types:
         and situation, whatever the wording: "Primary Database Outage Response" and "Database
         Primary Outage Runbook" are one runbook; "Deploying the Web App" and "Rolling Back the Web
         App" are two.
+
+  # A Pokédex, for testing Bookwyrm and Archivist on a bundle with real bulk: regions are the
+  # subject areas, primary types the folders inside them, one concept per Pokémon.
+  pokemon:
+    type: Pokemon
+    description: One Pokémon species (its default form) — types, base stats, matchups, abilities, size, evolution.
+    authored: true
+    structures: [pokemon-profile]
+    path: "knowledge/{okfx_region}/{okfx_primary_type}/{title}.md"
+    tags: [pokemon, "{okfx_region}"]
+    fields:
+      okfx_region:
+        description: The region it was first found in, lower case (kanto, johto, hoenn, sinnoh, unova, kalos, alola, galar, paldea).
+        required: true
+        from: the generation the source gives — each generation's main region
+      okfx_dex_number:
+        description: Its National Pokédex number.
+        required: true
+        from: the source's National Pokédex number
+      okfx_types:
+        description: Its types, primary first, lower case.
+        required: true
+        from: the source's types, in slot order
+      okfx_primary_type:
+        description: Its first type, lower case; the folder it lives in.
+        required: true
+        from: the first of okfx_types
+      okfx_generation:
+        description: The generation it was introduced in, as a number.
+        from: the source's generation
+    identity:
+      fields: [okfx_dex_number]
+      guidance: One concept per National Pokédex number; regional forms belong to the same species.
+
+  region-overview:
+    type: Region Overview
+    description: A region as a subject area — the Pokémon first found there, grouped by primary type.
+    authored: true
+    structures: [region-overview]
+    path: "knowledge/{okfx_region}/{title}.md"
+    tags: [region-overview, "{okfx_region}"]
+    fields:
+      okfx_region:
+        description: The region, lower case.
+        required: true
+        from: the region the source covers
+      okfx_generation:
+        description: The region's generation, as a number.
+        from: the source's generation
+    identity:
+      fields: [okfx_region]

@@ -1,0 +1,62 @@
+---
+type: Pokemon
+title: "Aegislash"
+description: "Steel/Ghost-type Pokémon from Kalos, National Pokédex #0681."
+tags: [pokemon, kalos, steel, ghost]
+status: draft
+generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
+sources:
+  - {resource: sources/processed/pokeapi-kalos.md, title: "PokéAPI data extract: Kalos"}
+okfx_structure: pokemon-profile
+okfx_region: kalos
+okfx_dex_number: 681
+okfx_types: [steel, ghost]
+okfx_primary_type: steel
+okfx_generation: 6
+---
+
+# Aegislash
+
+## Overview
+
+Aegislash is a Steel/Ghost-type Pokémon first found in the Kalos region (Generation VI), number 681 in the National Pokédex. It is known as the Royal Sword Pokémon.
+
+Its base stats total 500, and its strongest stat is Defense (140).
+
+## Base Stats
+
+| Stat | Base |
+|---|---|
+| HP | 60 |
+| Attack | 50 |
+| Defense | 140 |
+| Sp. Atk | 50 |
+| Sp. Def | 140 |
+| Speed | 60 |
+| **Total** | **500** |
+
+## Type Matchups
+
+Damage it takes from each attacking type, where that isn't normal.
+
+- **Weak to** (2×): Dark, Fire, Ghost, Ground
+- **Resists** (½×): Dragon, Fairy, Flying, Grass, Ice, Psychic, Rock, Steel
+- **Strongly resists** (¼×): Bug
+- **Immune to** (0×): Fighting, Normal, Poison
+
+## Abilities
+
+- Stance Change
+
+## Size
+
+- Height: 1.7 m
+- Weight: 53 kg
+
+## Evolution
+
+- Evolves from: Doublade
+
+## Open Questions
+
+*[Questions for the owning team are collected here during review.]*

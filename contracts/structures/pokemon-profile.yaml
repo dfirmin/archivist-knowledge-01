@@ -1,0 +1,21 @@
+id: pokemon-profile
+description: One Pokémon's facts, from the PokéAPI data extract for its region.
+sections:
+  - heading: Overview
+    description: Its types, region, generation and National Pokédex number; Legendary or Mythical if so; its base stat total and strongest stat.
+  - heading: Base Stats
+    description: The six base stats and their total, as a table.
+  - heading: Type Matchups
+    description: The attacking types it is weak to, resists or is immune to, with the multiplier.
+  - heading: Abilities
+    description: Its abilities, the hidden one marked.
+  - heading: Size
+    description: Height in metres and weight in kilograms.
+  - heading: Evolution
+    description: What it evolves from and into, or that it does not evolve.
+  - heading: Strategy Notes
+    required: false
+    description: How trainers use it, when a source says.
+  - heading: Open Questions
+    owner: placeholder
+    placeholder: "*[Questions for the owning team are collected here during review.]*"
