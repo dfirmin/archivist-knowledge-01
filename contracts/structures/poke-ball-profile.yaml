@@ -1,0 +1,14 @@
+id: poke-ball-profile
+description: One kind of Poké Ball, from general game knowledge or a source about the games' items.
+sections:
+  - heading: Overview
+    description: What the ball is, how it compares with the other balls, and the generation it first appeared in.
+  - heading: Catch Rate
+    description: Its catch rate multiplier and any conditions that change it (for example, a ball that never fails, or one that works better at night).
+  - heading: How to Get It
+    description: Whether it is sold or given as a reward, and roughly when in the game it becomes available.
+  - heading: Related
+    description: Links to the other Poké Ball concepts and the Poké Balls overview.
+  - heading: Open Questions
+    owner: placeholder
+    placeholder: "*[Questions for the owning team are collected here during review.]*"

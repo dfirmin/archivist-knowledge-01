@@ -1,7 +1,7 @@
 version: 1
 kinds:
   - id: missing_section
-    applies_to: [policy, runbook, pokemon, region-overview]
+    applies_to: [policy, runbook, pokemon, region-overview, poke-ball]
     definition: A required section has no substantive content.
     origins: [author, documentation]
     context: [the concept body, the structure named in okfx_structure, the cited sources]

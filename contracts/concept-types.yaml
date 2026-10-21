@@ -99,3 +99,15 @@ concept_types:
         from: the source's generation
     identity:
       fields: [okfx_region]
+
+  # The balls trainers throw to catch Pokémon: one concept per ball type, in one flat folder.
+  poke-ball:
+    type: Poke Ball
+    description: One kind of Poké Ball — what it does, how well it catches, and how to get it.
+    authored: true
+    structures: [poke-ball-profile]            # one structure: no rule needed
+    path: "knowledge/poke-balls/{title}.md"
+    tags: [poke-ball, items]
+    identity:
+      fields: [title]
+      guidance: One concept per ball type. Titles match ignoring case and accents ("Poke Ball" and "Poké Ball" are one ball); a Great Ball and an Ultra Ball are two.
