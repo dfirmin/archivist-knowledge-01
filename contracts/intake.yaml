@@ -1,12 +1,15 @@
 version: 1
 # No default concept_type: every class says which concept type its documents become.
 scope: >-
-  A document is in scope when its owning team is listed in teams (match by key, name or alias; a
-  chat or email with no stated owner belongs to the team its participants clearly speak for).
-  Otherwise it is out of scope until that team is added.
+  A handbook document is in scope when its owning team is listed in teams (match by key, name or
+  alias; a chat or email with no stated owner belongs to the team its participants clearly speak
+  for); otherwise it is out of scope until that team is added. A document about one or more
+  Pokémon species is in scope: the Pokédex belongs to the region each species was first found in,
+  and a Pokémon document needs no team.
 grouping: >-
   Each document is its own concept, except a policy amendment, which joins the policy it amends,
-  and an extract from a call, which joins the document about the same policy or runbook.
+  an extract from a call, which joins the document about the same policy or runbook, and trainer
+  notes, which join the Pokémon they are about.
 naming: >-
   A short, plain title for what the document governs or explains, in title case, without dates,
   version numbers or words like "Re:", "Fwd:" or "notes". Messy sources often have no usable
@@ -43,3 +46,22 @@ classes:
       Keep passages that state or change how an incident is handled (a runbook step, an escalation
       contact or timing) or a rule people must follow (a policy), one extract per runbook or policy
       they concern. Drop status chatter, introductions, jokes and scheduling.
+
+
+  # The Pokédex. Its concepts come from the PokéAPI data extracts; what people send adds what the
+  # data doesn't say: how trainers use a Pokémon, where to find it, and corrections to its stats.
+  - id: trainer-notes
+    description: >-
+      Notes, emails, chats or forum posts about how one Pokémon is used in battle, where it is
+      found, how it is obtained or evolves, or whether its stats are right.
+    concept_type: pokemon
+    mode: enrich-only          # adds to the Pokémon's concept; never creates one
+    sections: best-fit
+  - id: pokedex-call
+    description: >-
+      A verbatim transcript of a Pokédex team call: timestamped lines, each with a speaker.
+    mode: extract
+    extract: >-
+      Keep passages that say how a Pokémon is used in battle, where it is found or how it is
+      obtained, or that confirm or correct its type or stats, one extract per Pokémon. Drop
+      agendas, scheduling and chatter.
