@@ -1,0 +1,80 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+version: 1
+site:
+  title: Archivist Knowledge 01
+  structure:
+    - type: section
+      key: section-pokedex
+      title: Pokédex
+      path: pokedex
+      description: One subject area per region, by the generation it introduced; inside each, a folder per primary type and one concept per Pokémon.
+      default: true
+      children:
+        - type: space
+          key: space-kanto
+          title: Kanto
+          path: kanto
+          default: true
+          content:
+            directory: knowledge/kanto
+        - type: space
+          key: space-johto
+          title: Johto
+          path: johto
+          content:
+            directory: knowledge/johto
+        - type: space
+          key: space-hoenn
+          title: Hoenn
+          path: hoenn
+          content:
+            directory: knowledge/hoenn
+        - type: space
+          key: space-sinnoh
+          title: Sinnoh
+          path: sinnoh
+          content:
+            directory: knowledge/sinnoh
+        - type: space
+          key: space-unova
+          title: Unova
+          path: unova
+          content:
+            directory: knowledge/unova
+        - type: space
+          key: space-kalos
+          title: Kalos
+          path: kalos
+          content:
+            directory: knowledge/kalos
+        - type: space
+          key: space-alola
+          title: Alola
+          path: alola
+          content:
+            directory: knowledge/alola
+        - type: space
+          key: space-galar
+          title: Galar
+          path: galar
+          content:
+            directory: knowledge/galar
+        - type: space
+          key: space-paldea
+          title: Paldea
+          path: paldea
+          content:
+            directory: knowledge/paldea
+    - type: section
+      key: section-poke-balls
+      title: Poké Balls
+      path: poke-balls
+      description: The main Poké Ball types, what each one does, how well it catches, and how to get it.
+      children:
+        - type: space
+          key: space-poke-balls
+          title: Poké Balls
+          path: poke-balls
+          default: true
+          content:
+            directory: knowledge/poke-balls
