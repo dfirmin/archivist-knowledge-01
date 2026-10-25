@@ -1,0 +1,87 @@
+# knodex engine: turns documents dropped in sources/inbox/ into knowledge, following contracts/.
+#
+# The bulk route. Use it when many documents need processing at once; for one document or a quick
+# change, ask the Curator in the knodex app instead.
+#
+# Runs on the documents added to the inbox by a push, or on the files the knodex app names when it
+# starts a run. It never sweeps the whole inbox. Each run opens one pull request with its drafts and
+# quarantined documents, and files the gaps it found as issues.
+#
+# Needs: the ANTHROPIC_API_KEY secret (repository or the environment below), and Settings > Actions >
+# General > "Allow GitHub Actions to create and approve pull requests".
+#
+# Added by the knodex app. After that this file is yours: edit the runner, environment or engine
+# version (KNODEX_REF) as you need.
+name: knodex-engine
+run-name: "engine: ${{ inputs.files || 'documents pushed to the inbox' }}"
+
+on:
+  push:
+    branches: [main]
+    paths: ["sources/inbox/**"]
+  workflow_dispatch:
+    inputs:
+      files:
+        description: Inbox files to process, comma-separated (names in sources/inbox/)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: knodex-engine
+  cancel-in-progress: false
+
+env:
+  KNODEX_REF: ed250474e4214ae2fa60b50a0a9281bf05945485     # the knodex engine version this repo runs
+
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    environment: dev   # where ANTHROPIC_API_KEY lives; remove if it's a repository secret
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get the knodex engine
+        uses: actions/checkout@v4
+        with:
+          repository: dfirmin/knodex
+          ref: ${{ env.KNODEX_REF }}
+          path: .knodex
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install the engine
+        run: |
+          echo ".knodex/" >> .git/info/exclude
+          npm ci --prefix .knodex/engine --ignore-scripts --no-audit --no-fund
+
+      - name: Process the inbox
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KNODEX_FILES: ${{ inputs.files }}
+          KNODEX_BEFORE: ${{ github.event.before }}
+          KNODEX_AFTER: ${{ github.event.after }}
+          KNODEX_VERSION: ${{ env.KNODEX_REF }}
+          KNODEX_MODEL: ${{ vars.KNODEX_MODEL || 'claude-sonnet-5-5' }}
+          KNODEX_PARALLEL: ${{ vars.KNODEX_PARALLEL || '3' }}
+          KNODEX_REPORT: ${{ runner.temp }}/knodex-report.json
+        run: node .knodex/engine/run.mjs
+
+      - name: Keep the run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: knodex-report
+          path: ${{ runner.temp }}/knodex-report.json
+          if-no-files-found: ignore
