@@ -1,14 +1,15 @@
 # knodex engine: turns documents dropped in sources/inbox/ into knowledge, following contracts/.
 #
-# The bulk route. Use it when many documents need processing at once; for one document or a quick
-# change, ask the Curator in the knodex app instead.
+# The bulk route, for large batches (25 or more documents at once). For a few documents or quick
+# changes, ask the Curator in the knodex app instead.
 #
 # Runs on the documents added to the inbox by a push, or on the files the knodex app names when it
 # starts a run. It never sweeps the whole inbox. Each run opens one pull request with its drafts and
 # quarantined documents, and files the gaps it found as issues.
 #
-# Needs: the ANTHROPIC_API_KEY secret (repository or the environment below), and Settings > Actions >
-# General > "Allow GitHub Actions to create and approve pull requests".
+# Needs: a model key, either the ANTHROPIC_API_KEY secret, or the LITELLM_API_KEY secret with the
+# LITELLM_BASE_URL variable for a LiteLLM gateway (repository, or the environment below); and
+# Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
 #
 # Added by the knodex app. After that this file is yours: edit the runner, environment or engine
 # version (KNODEX_REF) as you need.
@@ -36,12 +37,12 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  KNODEX_REF: ed250474e4214ae2fa60b50a0a9281bf05945485     # the knodex engine version this repo runs
+  KNODEX_REF: 9f9d38a6605a06711ef9a91a168a90d022a585a6     # the knodex engine version this repo runs
 
 jobs:
   engine:
     runs-on: ubuntu-latest
-    environment: dev   # where ANTHROPIC_API_KEY lives; remove if it's a repository secret
+    environment: dev   # where the model key lives; remove if it's a repository secret
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +70,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
+          LITELLM_BASE_URL: ${{ vars.LITELLM_BASE_URL }}
           KNODEX_FILES: ${{ inputs.files }}
           KNODEX_BEFORE: ${{ github.event.before }}
           KNODEX_AFTER: ${{ github.event.after }}
