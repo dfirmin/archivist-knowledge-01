@@ -16,13 +16,14 @@ okfx_generation: 1
 verified:
   - {by: "human:Dee", at: 2026-10-21T21:25:31Z}
   - {by: "human:Dee", at: 2026-10-21T21:35:00Z}
+  - {by: "human:kdthedev", at: 2026-10-25T14:21:01Z}
 ---
 
 # Mewtwo
 
 ## Overview
 
-Mewtwo is a Psychic-type Pokémon first found in the Kanto region (Generation I), number 150 in the National Pokédex. It is known as the Genetic Pokémon. It is a Legendary Pokémon.
+Mewtwo is a Psychic-type Pokémon first found in the Kanto region (Generation I), number 150 in the National Pokédex. It is known as the Genetic Pokémon. It is a Legendary Pokémon, perhaps one of the strongest.
 
 Its base stats total 680, and its strongest stat is Sp. Atk (154).
 
