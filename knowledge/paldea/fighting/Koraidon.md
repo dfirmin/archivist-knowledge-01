@@ -7,12 +7,15 @@ status: draft
 generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
 sources:
   - {resource: sources/processed/pokeapi-paldea.md, title: "PokéAPI data extract: Paldea"}
+  - {title: "Bulbapedia"}
 okfx_structure: pokemon-profile
 okfx_region: paldea
 okfx_dex_number: 1007
 okfx_types: [fighting, dragon]
 okfx_primary_type: fighting
 okfx_generation: 9
+verified:
+  - {by: "human:DeAnte Firmin", at: 2026-10-25T15:14:20Z}
 ---
 
 # Koraidon
@@ -24,6 +27,8 @@ Koraidon is a Fighting/Dragon-type Pokémon first found in the Paldea region (Ge
 Its base stats total 670, and its strongest stat is Attack (135).
 
 ## Base Stats
+
+These base stats are from Pokémon Scarlet and Violet (Generation IX) and were checked against Bulbapedia.
 
 | Stat | Base |
 |---|---|
