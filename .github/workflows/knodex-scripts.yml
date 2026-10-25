@@ -37,7 +37,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  KNODEX_REF: 9f9d38a6605a06711ef9a91a168a90d022a585a6
+  KNODEX_REF: ba84414e8dd8051e6fbccc1e4f45b282cddcecb9
 
 jobs:
   scripts:
