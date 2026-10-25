@@ -1,0 +1,15 @@
+name: PokéAPI base stats
+description: >-
+  Checks every Pokémon's Base Stats table against PokéAPI and updates the numbers that differ.
+  Only the table changes; the rest of each page is left alone.
+kind: updater          # connector: brings documents into the inbox | updater: edits documents directly
+schedule: ""           # optional, UTC cron, e.g. "0 6 * * 1" for Mondays at 06:00
+inputs:
+  region:
+    description: Only Pokémon from this region (blank for all).
+    default: kanto
+  limit:
+    description: Stop after this many Pokémon (0 for no limit).
+    default: "0"
+secrets: []            # names of repository secrets the script reads with knodex.secret()
+requirements: [requests==2.32.3]

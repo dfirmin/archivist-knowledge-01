@@ -1,0 +1,87 @@
+# knodex scripts: runs the scripts in scripts/ (connectors that bring documents into the inbox, and
+# updaters that edit documents directly). See scripts/README.md.
+#
+# Runs one script when the knodex app (or the Actions tab) starts it, and every hour checks which
+# scripts' schedules are due. Connectors' documents go in as an inbox drop and start the Engine;
+# updaters' changes arrive as one pull request for review.
+#
+# Secrets: a script lists the secrets it needs in its script.yaml; only those reach it.
+# Needs Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
+#
+# Added by the knodex app. After that this file is yours.
+name: knodex-scripts
+run-name: "script: ${{ inputs.script || 'scheduled' }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: The script's folder name in scripts/
+        required: true
+        type: string
+      inputs:
+        description: The script's inputs as JSON, e.g. {"region":"kanto"}
+        required: false
+        type: string
+        default: "{}"
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write        # a connector starts the Engine on what it brought in
+
+concurrency:
+  group: knodex-scripts-${{ inputs.script || 'scheduled' }}
+  cancel-in-progress: false
+
+env:
+  KNODEX_REF: ed250474e4214ae2fa60b50a0a9281bf05945485
+
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    environment: dev
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get the knodex script runner
+        uses: actions/checkout@v4
+        with:
+          repository: dfirmin/knodex
+          ref: ${{ env.KNODEX_REF }}
+          path: .knodex
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the runner
+        run: |
+          echo ".knodex/" >> .git/info/exclude
+          python -m pip install --quiet -r .knodex/engine/scripts/requirements.txt
+
+      - name: Run
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          KNODEX_SECRETS_JSON: ${{ toJSON(secrets) }}
+          KNODEX_REPORT: ${{ runner.temp }}/knodex-scripts.json
+          SCRIPT: ${{ inputs.script }}       # passed through the environment, never pasted into the shell
+          INPUTS: ${{ inputs.inputs }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python .knodex/engine/scripts/runner.py --scheduled
+          else
+            python .knodex/engine/scripts/runner.py --script "$SCRIPT" --inputs "$INPUTS"
+          fi
+        shell: bash
+      - name: Keep the run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: knodex-scripts
+          path: ${{ runner.temp }}/knodex-scripts.json
+          if-no-files-found: ignore

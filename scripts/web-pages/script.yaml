@@ -1,0 +1,12 @@
+name: Web pages to the inbox
+description: >-
+  Fetches web pages and drops their text into the inbox for the Engine. Pages already brought in
+  are skipped.
+kind: connector
+schedule: ""
+inputs:
+  urls:
+    description: Pages to fetch, comma-separated.
+    default: ""
+secrets: []
+requirements: [requests==2.32.3]
