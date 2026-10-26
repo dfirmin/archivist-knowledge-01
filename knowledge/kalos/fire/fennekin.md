@@ -1,0 +1,61 @@
+---
+type: Pokemon
+title: "Fennekin"
+description: "Fire-type Pokémon from Kalos, National Pokédex #0653."
+tags: [pokemon, kalos, fire]
+status: draft
+generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
+sources:
+  - {resource: sources/processed/pokeapi-kalos.md, title: "PokéAPI data extract: Kalos"}
+okfx_structure: pokemon-profile
+okfx_region: kalos
+okfx_dex_number: 653
+okfx_types: [fire]
+okfx_primary_type: fire
+okfx_generation: 6
+---
+
+# Fennekin
+
+## Overview
+
+Fennekin is a Fire-type Pokémon first found in the Kalos region (Generation VI), number 653 in the National Pokédex. It is known as the Fox Pokémon.
+
+Its base stats total 307, and its strongest stat is Sp. Atk (62).
+
+## Base Stats
+
+| Stat | Base |
+|---|---|
+| HP | 40 |
+| Attack | 45 |
+| Defense | 40 |
+| Sp. Atk | 62 |
+| Sp. Def | 60 |
+| Speed | 60 |
+| **Total** | **307** |
+
+## Type Matchups
+
+Damage it takes from each attacking type, where that isn't normal.
+
+- **Weak to** (2×): Ground, Rock, Water
+- **Resists** (½×): Bug, Fairy, Fire, Grass, Ice, Steel
+
+## Abilities
+
+- Blaze
+- Magician (hidden ability)
+
+## Size
+
+- Height: 0.4 m
+- Weight: 9.4 kg
+
+## Evolution
+
+- Evolves into: Braixen
+
+## Open Questions
+
+*[Questions for the owning team are collected here during review.]*

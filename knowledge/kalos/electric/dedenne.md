@@ -1,0 +1,63 @@
+---
+type: Pokemon
+title: "Dedenne"
+description: "Electric/Fairy-type Pokémon from Kalos, National Pokédex #0702."
+tags: [pokemon, kalos, electric, fairy]
+status: draft
+generated: {by: bookwyrm-seed/1, at: 2026-10-21T21:00:00Z}
+sources:
+  - {resource: sources/processed/pokeapi-kalos.md, title: "PokéAPI data extract: Kalos"}
+okfx_structure: pokemon-profile
+okfx_region: kalos
+okfx_dex_number: 702
+okfx_types: [electric, fairy]
+okfx_primary_type: electric
+okfx_generation: 6
+---
+
+# Dedenne
+
+## Overview
+
+Dedenne is a Electric/Fairy-type Pokémon first found in the Kalos region (Generation VI), number 702 in the National Pokédex. It is known as the Antenna Pokémon.
+
+Its base stats total 431, and its strongest stat is Speed (101).
+
+## Base Stats
+
+| Stat | Base |
+|---|---|
+| HP | 67 |
+| Attack | 58 |
+| Defense | 57 |
+| Sp. Atk | 81 |
+| Sp. Def | 67 |
+| Speed | 101 |
+| **Total** | **431** |
+
+## Type Matchups
+
+Damage it takes from each attacking type, where that isn't normal.
+
+- **Weak to** (2×): Ground, Poison
+- **Resists** (½×): Bug, Dark, Electric, Fighting, Flying
+- **Immune to** (0×): Dragon
+
+## Abilities
+
+- Cheek Pouch
+- Pickup
+- Plus (hidden ability)
+
+## Size
+
+- Height: 0.2 m
+- Weight: 2.2 kg
+
+## Evolution
+
+Dedenne does not evolve.
+
+## Open Questions
+
+*[Questions for the owning team are collected here during review.]*
